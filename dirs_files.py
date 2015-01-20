@@ -25,7 +25,7 @@ def get_dir_size(start_path):
     mb = 1024 * 1024
     total_size_in_mb = total_size / mb
     total_size_twodec = "%.2f" % total_size_in_mb + " MB"
-    if len(total_size_twodec) == 11:
+    if len(total_size_twodec) >= 11:
         total_size_in_gb = total_size_in_mb / 1024
         total_size_twodec = "%.2f" % total_size_in_gb + " GB"
 
