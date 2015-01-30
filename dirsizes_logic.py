@@ -19,15 +19,16 @@ class MainWindowClass(QtWidgets.QMainWindow, form_class):
         self.softdistlabel.setText(dirs_files.software_distribution_dir)
         self.softdistdownlabel.setText(dirs_files.software_distribution_download_dir)
 
-        self.documentssize.setText(
-            dirs_files.get_files_count(dirs_files.documents_dir) + dirs_files.get_dir_size(dirs_files.documents_dir))
-        self.downloadsize.setText(
-            dirs_files.get_files_count(dirs_files.downloads_dir) + dirs_files.get_dir_size(dirs_files.downloads_dir))
+        self.documentssize.setText(dirs_files.get_files_count(dirs_files.documents_dir) + dirs_files.get_folders_count(
+            dirs_files.documents_dir) + dirs_files.get_dir_size(dirs_files.documents_dir))
+        self.downloadsize.setText(dirs_files.get_files_count(dirs_files.downloads_dir) + dirs_files.get_folders_count(
+            dirs_files.downloads_dir) + dirs_files.get_dir_size(dirs_files.downloads_dir))
         self.softdistsize.setText(
-            dirs_files.get_files_count(dirs_files.software_distribution_dir) + dirs_files.get_dir_size(
-                dirs_files.software_distribution_dir))
+            dirs_files.get_files_count(dirs_files.software_distribution_dir) + dirs_files.get_folders_count(
+                dirs_files.software_distribution_dir) + dirs_files.get_dir_size(dirs_files.software_distribution_dir))
         self.softdistdownsize.setText(
-            dirs_files.get_files_count(dirs_files.software_distribution_download_dir) + dirs_files.get_dir_size(
+            dirs_files.get_files_count(dirs_files.software_distribution_download_dir) + dirs_files.get_folders_count(
+                dirs_files.software_distribution_download_dir) + dirs_files.get_dir_size(
                 dirs_files.software_distribution_download_dir))
 
         self.documentsbutton.setText('Show "' + dirs_files.documents + '" files')

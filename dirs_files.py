@@ -38,4 +38,10 @@ def get_files_count(start_path):
         if os.path.isfile(os.path.join(start_path, f)):
             count += 1
 
-    return str(count) + " file(s) / "
+    return str(count) + " file(s) - "
+
+
+def get_folders_count(start_path):
+    foldercountarray = [os.path.join(start_path, o) for o in os.listdir(start_path) if
+                        os.path.isdir(os.path.join(start_path, o))]
+    return str(foldercountarray.__len__()) + " folder(s) / "
