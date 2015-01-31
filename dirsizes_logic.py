@@ -5,6 +5,8 @@ import subprocess
 
 # noinspection PyUnresolvedReferences
 from PyQt5 import QtWidgets, uic, QtGui, QtCore
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
 
 import dirs_files
 
@@ -15,6 +17,8 @@ class MainWindowClass(QtWidgets.QMainWindow, form_class):
     def __init__(self, parent=None):
         QtWidgets.QMainWindow.__init__(self, parent)
         self.setupUi(self)
+        self.iconres = QtGui.QPixmap(':/AppIcon/icon.ico')
+        self.icon = QtGui.QIcon(self.iconres)
         self.documentslabel.setText(dirs_files.documents_dir)
         self.downloadlabel.setText(dirs_files.downloads_dir)
         self.softdistlabel.setText(dirs_files.software_distribution_dir)

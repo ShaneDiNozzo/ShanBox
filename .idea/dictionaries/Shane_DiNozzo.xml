@@ -6,8 +6,10 @@
       <w>documentssize</w>
       <w>downloadbutton</w>
       <w>foldercountarray</w>
+      <w>iconres</w>
       <w>softdistbutton</w>
       <w>softdistdownbutton</w>
+      <w>struct</w>
     </words>
   </dictionary>
 </component>
