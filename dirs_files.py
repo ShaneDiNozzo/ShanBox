@@ -17,20 +17,34 @@ documents_dir = os.getenv("USERPROFILE") + documents
 
 def get_dir_size(start_path):
     total_size = 0
+    total_size_twodecimal = ''
 
     for dirpath, dirnames, filenames in os.walk(start_path):
         for f in filenames:
             filepath = os.path.join(dirpath, f)
             total_size += os.path.getsize(filepath)
 
-    mb = 1024 * 1024
-    total_size_in_mb = total_size / mb
-    total_size_twodec = "%.2f" % total_size_in_mb + " MB"
-    if len(total_size_twodec) >= 11:
-        total_size_in_gb = total_size_in_mb / 1024
-        total_size_twodec = "%.2f" % total_size_in_gb + " GB"
+    if 1 <= len(str(total_size)) <= 3:
+        total_size_twodecimal = '%.2f' % total_size + ' B'
+    elif 4 <= len(str(total_size)) <= 6:
+        total_size_in_kb = total_size / 1024
+        total_size_twodecimal = '%.2f' % total_size_in_kb + ' KB'
+    elif 7 <= len(str(total_size)) <= 9:
+        mb = 1024 * 1024
+        total_size_in_mb = total_size / mb
+        total_size_twodecimal = '%.2f' % total_size_in_mb + ' MB'
+    elif 10 <= len(str(total_size)) <= 12:
+        gb = 1024 * 1024 * 1024
+        total_size_in_gb = total_size / gb
+        total_size_twodecimal = '%.2f' % total_size_in_gb + ' GB'
+    elif 13 <= len(str(total_size)) <= 15:
+        tb = 1024 * 1024 * 1024 * 1024
+        total_size_in_tb = total_size / tb
+        total_size_twodecimal = '%.2f' % total_size_in_tb + ' TB'
+    else:
+        print('The size of the folder is greater than TB!')
 
-    return total_size_twodec
+    return total_size_twodecimal
 
 
 def get_files_count(start_path):
