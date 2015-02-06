@@ -6,10 +6,15 @@
       <w>documentssize</w>
       <w>downloadbutton</w>
       <w>foldercountarray</w>
+      <w>getds</w>
+      <w>getfic</w>
+      <w>getfoc</w>
       <w>iconres</w>
       <w>shan</w>
       <w>softdistbutton</w>
+      <w>softdistdir</w>
       <w>softdistdownbutton</w>
+      <w>softdistdowndir</w>
       <w>struct</w>
     </words>
   </dictionary>

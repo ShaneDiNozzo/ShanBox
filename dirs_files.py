@@ -59,4 +59,4 @@ def get_files_count(start_path):
 def get_folders_count(start_path):
     foldercountarray = [os.path.join(start_path, o) for o in os.listdir(start_path) if
                         os.path.isdir(os.path.join(start_path, o))]
-    return str(foldercountarray.__len__()) + " folder(s) / "
+    return str(len(foldercountarray)) + " folder(s) / "
