@@ -1,19 +1,19 @@
-__author__ = "ShaneDiNozzo"
+__author__ = 'ShaneDiNozzo'
 
 import os
 
 # noinspection PyUnresolvedReferences
 import dirsizes_logic
 
-documents = "\Documents"
-documents_dir = os.getenv("USERPROFILE") + documents
+# Set location variables
+documents = '\Documents'
+documents_dir = os.getenv('USERPROFILE') + documents
 software_distribution_download = '\SoftwareDistribution\Download'
 software_distribution_download_dir = os.getenv('windir') + software_distribution_download
 downloads = '\Downloads'
 downloads_dir = os.getenv('USERPROFILE') + downloads
 software_distribution = '\SoftwareDistribution'
-software_distribution_dir = os.getenv("windir") + software_distribution
-
+software_distribution_dir = os.getenv('windir') + software_distribution
 
 
 def get_dir_size(start_path):
@@ -43,7 +43,7 @@ def get_dir_size(start_path):
         total_size_in_tb = total_size / tb
         total_size_twodecimal = '%.2f' % total_size_in_tb + ' TB'
     else:
-        print('The size of the folder is greater than TB!')
+        print('The size of the folder is greater than TB!')  # Maximum value is TB!
 
     return total_size_twodecimal
 
@@ -54,10 +54,10 @@ def get_files_count(start_path):
         if os.path.isfile(os.path.join(start_path, f)):
             count += 1
 
-    return str(count) + " file(s) - "
+    return str(count) + ' file(s) - '
 
 
 def get_folders_count(start_path):
     foldercountarray = [os.path.join(start_path, o) for o in os.listdir(start_path) if
                         os.path.isdir(os.path.join(start_path, o))]
-    return str(len(foldercountarray)) + " folder(s) / "
+    return str(len(foldercountarray)) + ' folder(s) / '
