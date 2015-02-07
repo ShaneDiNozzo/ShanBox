@@ -6,13 +6,14 @@ import os
 import dirsizes_logic
 
 documents = "\Documents"
+documents_dir = os.getenv("USERPROFILE") + documents
 software_distribution_download = '\SoftwareDistribution\Download'
+software_distribution_download_dir = os.getenv('windir') + software_distribution_download
 downloads = '\Downloads'
+downloads_dir = os.getenv('USERPROFILE') + downloads
 software_distribution = '\SoftwareDistribution'
 software_distribution_dir = os.getenv("windir") + software_distribution
-downloads_dir = os.getenv('USERPROFILE') + downloads
-software_distribution_download_dir = os.getenv('windir') + software_distribution_download
-documents_dir = os.getenv("USERPROFILE") + documents
+
 
 
 def get_dir_size(start_path):
