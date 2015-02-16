@@ -19,7 +19,7 @@ from PyQt5.QtWidgets import *
 # Try to import dirs_files module
 try:
     # noinspection PyUnresolvedReferences
-    import dirs_file as df
+    import dirs_files as df
 except ImportError:
     print('\nThe dirs_files module not found! Please install it!')
     exit()
@@ -56,10 +56,10 @@ class MainWindowClass(QtWidgets.QMainWindow, form_class):
         self.softdistdownsize.setText(getfic(softdistdowndir) + getfoc(softdistdowndir) + getds(softdistdowndir))
 
         # Set Show in Explorer button text
-        self.documentsbutton.setText('Show '' + df.documents + '' in Explorer')
-        self.downloadbutton.setText('Show '' + df.downloads + '' in Explorer')
-        self.softdistbutton.setText('Show '' + df.software_distribution + '' files')
-        self.softdistdownbutton.setText('Show '' + df.software_distribution_download + '' files')
+        self.documentsbutton.setText('Show \"' + df.documents + '\" in Explorer')
+        self.downloadbutton.setText('Show \"' + df.downloads + '\" in Explorer')
+        self.softdistbutton.setText('Show \"' + df.software_distribution + '\" in Explorer')
+        self.softdistdownbutton.setText('Show \"' + df.software_distribution_download + '\" in Explorer')
 
         # Set button click event
         self.documentsbutton.clicked.connect(lambda: self.open_file_location(df.documents_dir))
